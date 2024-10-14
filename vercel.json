@@ -6,8 +6,18 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
       }
     }
   ],
-  "buildCommand": "pip install -r requirements.txt"
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dgc/wsgi.py"
+    }
+  ]
 }
