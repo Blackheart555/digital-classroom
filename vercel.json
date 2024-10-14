@@ -6,9 +6,5 @@
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "/manage.py" }
-  ],
-  "static": {
-    "src": "staticfiles",
-    "dest": "/static"
-  }
+  ]
 }
